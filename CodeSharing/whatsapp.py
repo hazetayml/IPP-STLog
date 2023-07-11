@@ -1,3 +1,11 @@
+'''
+Pre-requisite: 
+1. Latest Chrome driver must be present in the same folder running this code
+2. pip install selenium
+3. Replace phone number in Line 22 (65 -> country code, 91234567 -> phone number)
+Author: Tay Mei Lan (hazetay@gmail.com)
+'''
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -11,7 +19,7 @@ driver = webdriver.Chrome()  # Optional argument, if not specified will search p
 message = "hello from STLog"
 
 # replace with your own phone numbers
-driver.get("https://api.whatsapp.com/send?phone=6590609803&text="+ message)
+driver.get("https://api.whatsapp.com/send?phone=6591234567&text="+ message)
 
 # click on send button
 #elem = driver.find_element_by_id("action-button")

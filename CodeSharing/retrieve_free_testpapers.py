@@ -1,3 +1,10 @@
+'''
+Pre-requisite: 
+1. Must have internet connection
+2. Create a folder called "testpapers" in the directory of where this code is, download will be to this folder
+Note: This URL download is valid for Year 2020, P6 papers, modify Line 13 and 14 accordingly, may/may not work for different levels, need further testing, 
+Author: Tay Mei Lan (hazetay@gmail.com)
+'''
 import requests
 import time
 

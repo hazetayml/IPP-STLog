@@ -1,0 +1,259 @@
+# Online editors
+https://trinket.io/python3
+https://replit.com/
+https://colab.research.google.com/
+
+import winsound
+
+floatFreq = [261.63, 293.66, 329.63, 349.23, 392, 440, 493.88, 523.25, 587.33]
+floatFreq1 = [1,5,4,5,6,6,6,5,5,5,6,8,8,6,5,4,5,6,6,6,6,5,5,6,5,4]
+
+for i in range(len(floatFreq1)):
+    winsound.Beep(int(floatFreq[floatFreq1[i]]), 300)
+------
+import random
+
+luckynum = random.randint(1, 20)
+print(luckynum)
+
+for i in range(6): #[0,1,2,3,4,5]
+    guess = int(input("Take a guess: "))
+    
+    #Checking
+    if guess > luckynum:
+        print("Your guess is too high")
+    elif guess < luckynum:
+        print("Your guess is too low")
+    else:
+        print("Congrats, guessed in "+ str(i+1) + " tries")
+        break
+    
+if guess!=luckynum:
+    print("Lucky num is : "+str(luckynum))
+#4D
+for i in range(10):
+    num = random.randint(0, 9999)
+    print("%04d"%num)
+
+#ToTo
+mylist = []  
+while (len(mylist)<7):
+    num = random.randint(1, 49)
+    if num not in mylist:
+        mylist.append(num)
+    
+for i in mylist:
+    print("%02d"%i)    
+
+#String format
+name = "John"
+age = 5
+print("%s is %d years old"%(name, age))
+
+
+#Slide 69 Find longest word
+#Define function
+def findLongestWord(sentence):
+    words = sentence.split()
+    longest = words[0] #initialise 1st word to be longest
+    longestLen = len(longest)
+    longestWords = []
+    
+    for eachword in words:
+        if len(eachword) > len(longest):
+            longest = eachword
+            longestLen = len(longest)
+    
+    for eachword in words:
+        if len(eachword) == longestLen:
+            longestWords.append(eachword)
+       
+    return longestWords
+
+#Call function
+sentence = "It is going to rains"
+longestWord = findLongestWord(sentence)
+print(longestWord)
+
+
+
+#Slide 66
+from  urllib.request import urlopen
+def isOnline(reliableserver='http://www.google.com'):
+    try:
+        urlopen(reliableserver)
+        return True
+    except IOError:
+        return False
+print(isOnline())
+
+
+#Slide 63 - get_sum
+def get_sum(mylist):
+    total = 0
+    for eachNum in mylist:
+        total = total + eachNum
+    return total
+
+a = get_sum ( [1,2,3,4])
+print(a)
+
+#Slide 63 - get_discount
+#Define function
+def get_discount(price, discountPercent):
+    return price*(1-discountPercent/100)
+
+#Call function
+amount = get_discount(123, 10)
+print(amount)
+
+#Slide 53 - using list
+odd_count = []
+even_count = []
+
+for i in range(1,11):
+    num = input("Enter number "+str(i)+":")
+    num = int(num)
+    
+    if num%2 == 0: #num when divide by 2 gives remainder 0 => even
+        even_count.append(num)
+    else: #odd
+        odd_count.append(num)
+print("Even : "+str(len(even_count)))
+print("Odd : "+str(len(odd_count)))
+
+
+#Slide 53
+for i in range(1,11):
+    num = input("Enter number "+str(i)+":")
+    num = int(num)
+#Slide 53 - Do one time
+odd_count = 0
+even_count = 0
+
+num = input("Enter number: ")
+num = int(num)
+
+if num%2 == 0: #num when divide by 2 gives remainder 0 => even
+    even_count = even_count +1
+else: #odd
+    odd_count = odd_count +1
+print("Even : "+str(even_count))
+print("Odd : "+str(odd_count))
+
+
+#Slide 51
+'''
+print("=", end="")
+for i in range(10):
+    print(i, end="=")
+'''
+
+#Slide 48
+weight = input("Enter your weight(kg):")
+height = input("Enter your height(meter):")
+weight=float(weight)
+height=float(height)
+
+BMI= round(float(weight/(height*height)),2)
+print("Your BMI is: "+str(BMI))
+
+if BMI < 18:
+    print("You are underweight")
+elif BMI >= 18 and BMI <25:
+    print("You have idea weight")
+elif BMI >= 25 and BMI <30:
+    print("You are overweight") 
+else:
+    print("You are obese")
+    
+print("End")
+
+
+weight = input("Enter your weight(kg):")
+height = input("Enter your height(meter):")
+weight=float(weight)
+height=float(height)
+             
+
+BMI= round(float(weight/(height*height)),2)
+print("Your BMI is: "+str(BMI))
+
+
+
+#Slide 47 - T-shirt size
+size = input("Enter your T-shirt size(s/m/l):")
+size = size.lower()  #convert to lowercase
+
+if size=="s":
+    print("Small size")
+elif size=="m":
+    print("Medium size")
+elif size=="l":
+    print("Large")
+else:
+    print("Invalid size")
+    
+
+#Slide43
+marks = 30
+
+if marks < 50:
+  print("Fail")
+  print("Pls try harder")
+else:
+  print("Pass")
+print("Completed")
+
+#Slide 41
+name = input("Enter patinet's name: ")
+#print("Enter name: ")
+temp = float(input("Enter temperature: "))
+
+diff = temp - 36.9
+diff = round(diff, 2)
+diff = abs(diff) # disregard + or -
+print(name + "'s temperature is "+ str(diff) + "degree celsius from 36.9 deg C")
+
+
+#Slide 39
+mylist = ["1", "5", "15"]
+mylist.append("20")
+mylist.remove("5")
+print(mylist)
+
+name_input = input("Enter your name : ")
+print("You entered your name is " + name_input)
+
+temp_input = input("Enter your temperature : ")
+temp_input = float(temp_input)
+print("You entered your temperature is " + str(temp_input))
+
+
+age_input = input("Enter your age : ")
+if float(temp_input) > 37.5: 
+    print("You entered your name is " + name_input  + 
+          " and you are " + age_input + " years old "+ 
+          " and your temperature is " + str(temp_input) + 
+          " and you are sick!")
+else:
+    print("You entered your name is " + name_input  + 
+          " and you are " + age_input + " years old "+ 
+          " and your temperature is " + str(temp_input) + 
+          " and you are well!")
+
+
+import datetime
+number_of_seconds = 1000
+print (str(datetime.timedelta(seconds=number_of_seconds)))
+
+
+
+#Slide 34 answer
+total_sec = 1000
+time_min = total_sec // 60 #integer divide
+remaining_sec = total_sec % 60  #remainder
+
+print("Time in mins and sec: "+str(time_min)+"min and " + str(remaining_sec)+"sec")
+
+
